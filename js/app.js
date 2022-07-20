@@ -11,9 +11,10 @@ while (isNaN(cantidad) && cantidad != "") {
 if (cantidad > 0 && cantidad <= 3) {
     // PREGUNTAR DEPENDIENDO LA CANTIDAD INGRESADA
     for (let index = 0; index < cantidad; index++) {
-        lenguajes = prompt("Nombra los lenguajes que conozcas") + "\n";
+        lenguajes += prompt("Nombra los lenguajes que conozcas") + "\n";
         console.log(lenguajes);
-    }
+    } // CONFIRMAR LENGUAJES INGRESADOS
+    confirm("Los lenguajes que conoces son estos?\n" + lenguajes);
 }// SI EL USUARIO INGRESA UNA CANTIDAD MAYOR A 3, DAR FELICITACIONES 
 else {
     alert(`Conoces muchos lenguajes, felicitaciones`);
