@@ -15,7 +15,7 @@ if (cantidad > 0 && cantidad <= 3) {
         console.log(lenguajes);
     } // CONFIRMAR LENGUAJES INGRESADOS
     confirm("Los lenguajes que conoces son estos?\n" + lenguajes);
-}// SI EL USUARIO INGRESA UNA CANTIDAD MAYOR A 3, DAR FELICITACIONES 
+} // SI EL USUARIO INGRESA UNA CANTIDAD MAYOR A 3, DAR FELICITACIONES
 else {
     alert(`Conoces muchos lenguajes, felicitaciones`);
     console.log("Conoce " + cantidad + " lenguajes");
