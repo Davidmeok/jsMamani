@@ -23,18 +23,19 @@ productos.push(new Productos("Promo x3", 1900));
 productos.push(new Productos("Promo Vegana", 550));
 // VERIFICAR QUE SE AGREGARON LOS OBJETOS AL ARRAY PRODUCTOS
 console.log(productos);
-// RECORRER EL ARRAY DE INICIO A FIN Y OBTENER SOLAMENTE LOS NOMBRES
-let nombres = ""
-// POR CADA NOMBRE DEL ARRAY PRODUCTOS
-for (const nombre of productos) {
-    // GUARDAR CADA NOMBRE UNO ABAJO DEL OTRO EN LA VARIABLE NOMBRES
-    nombres += nombre.nombre + "\n";
+// RECORRER EL ARRAY DE INICIO A FIN Y OBTENER NOMBRES Y PRECIOS DE LOS PRODUCTOS
+let lista = ""
+// POR CADA NOMBRE Y PRECIO DEL ARRAY PRODUCTOS
+for (const nombreYprecio of productos) {
+    // GUARDAR NOMBRE Y PRECIO UN ABAJO DEL OTRO
+    lista += `${nombreYprecio.nombre}  $${nombreYprecio.precio} \n`;
 }
 // MOSTRAR LISTA DE LOS NOMBRES DE LOS PRODUCTOS Y PREGUNTAR QUE DESEA AGREGAR AL CARRITO
-let productoSeleccionado = prompt("¿Que desea agregar al carrito?\n" + nombres);
+let productoSeleccionado = prompt("¿Que desea agregar al carrito?\n" + lista);
+
 // REPETIR PREGUNTA HASTA QUE INGRESE ESC PARA SALIR
 while (productoSeleccionado != "ESC") {
-    productoSeleccionado = prompt("¿Que desea agregar al carrito?\nPara salir escriba ESC\n" + nombres);
+    productoSeleccionado = prompt("¿Que desea agregar al carrito?\nPara salir escriba ESC\n" + lista);
     // SI PRODUCTOSELECCIONADO ES DE TIPO NUMBER 
     if (!isNaN(productoSeleccionado)) {
         alert("No ingresaste un producto de la lista");
