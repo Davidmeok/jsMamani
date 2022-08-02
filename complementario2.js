@@ -1,5 +1,5 @@
-//* DESAFIO 1 ENTREGABLE
-//? SIMULADOR INTERACTIVO
+//* DESAFIO COMPLEMENTARIO 2
+//? INCORPORAR ARRAYS
 // ESTRUCTURA DE PRODUCTOS Y PRECIOS
 class Productos {
     constructor(nombre, precio) {
@@ -32,15 +32,16 @@ for (const nombre of productos) {
 }
 // MOSTRAR LISTA DE LOS NOMBRES DE LOS PRODUCTOS Y PREGUNTAR QUE DESEA AGREGAR AL CARRITO
 let productoSeleccionado = prompt("¿Que desea agregar al carrito?\n" + nombres);
-
+// REPETIR PREGUNTA HASTA QUE INGRESE ESC PARA SALIR
 while (productoSeleccionado != "ESC") {
     productoSeleccionado = prompt("¿Que desea agregar al carrito?\nPara salir escriba ESC\n" + nombres);
+    // SI PRODUCTOSELECCIONADO ES DE TIPO NUMBER 
     if (!isNaN(productoSeleccionado)) {
         alert("No ingresaste un producto de la lista");
-    } else if (productoSeleccionado == "ESC") {
+    } else if (productoSeleccionado == "ESC") { // O SI PRODUCTOSELECCIONADO ES IGUAL A ESC CORTAR CICLO
         break;
     }
-    else {
+    else { // SINO MOSTRAR ALERTA 
         alert("Agregaste un producto al carrito")
     }
 }
