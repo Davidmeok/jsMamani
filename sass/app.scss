@@ -25,17 +25,15 @@ html {
 }
 
 .header {
-    width: 100vw;
-    height: 20vh;
+    width: 100%;
 }
 .nav {
     width: 100%;
-    height: 20vh;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    &__shop {
+    &-icon {
         height: 40px;
         width: 40px;
         color: #ededed;
@@ -53,23 +51,23 @@ html {
     text-align: center;
 }
 .section {
-    &__art {
+    &-art {
         display: flex;
         justify-content: center;
         align-items: center;
         flex-direction: column;
         gap: 1rem;
     }
-    &__tittle {
+    &-tittle {
         font-size: 1.6rem;
         text-transform: uppercase;
         color: #ededed;
     }
-    &__btn {
-        display: flex;
-        flex-direction: row;
-        gap: 1rem;
-    }
+}
+.con-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
 }
 .btn {
     text-transform: uppercase;
@@ -77,7 +75,7 @@ html {
 }
 
 @media screen and (max-width: 480px) {
-    .section__btn {
+    .con-btn {
         flex-direction: column;
     }
 }

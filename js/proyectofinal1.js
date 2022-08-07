@@ -6,7 +6,6 @@ class Productos {
         this.nombre = nombre;
         this.precio = precio;
     }
-
 }
 
 //* ARRAY DE PRODUCTOS
@@ -35,13 +34,16 @@ const menu = productos.filter((elemento) => elemento.nombre.includes("Crisma"));
 console.log(menu); // VERIFICAR QUE SE CREO EL NUEVO ARRAY
 
 //* ARRAY CON LOS PRODUCTOS PROMO CON FILTER
-const promos = productos.filter((elemento) => elemento.nombre.includes("Promo"));
+const promos = productos.filter((elemento) =>
+    elemento.nombre.includes("Promo")
+);
 console.log(promos); // VERIFICAR QUE SE CREO EL NUEVO ARRAY
 
 //* FUNCION DE MOSTRAR LISTA DE ID, NOMBRE Y PRECIO DE LOS PRODUCTOS CON FOREACH
 function mostrarLista(array) {
     let lista = "";
-    array.forEach((elemento) => { // POR CADA ELEMENTO DEL ARRAY INGRESADO POR PARAMETRO
+    array.forEach((elemento) => {
+        // POR CADA ELEMENTO DEL ARRAY INGRESADO POR PARAMETRO
         lista += `${elemento.id} - ${elemento.nombre} $${elemento.precio} \n`;
     });
     return lista; // RETORNO DE VARIABLE LISTA PARA UTILIZARLA GLOBALMENTE
@@ -60,17 +62,24 @@ while (verdadero) {
 
 //* FUNCION DE MOSTRAR LISTA SEGUN LA OPCION INGRESADA
 function mostrar() {
-    if (opcionElegida === 1) { // SI ES IGUAL A 1, PREGUNTAR QUE DESEA COMPRAR Y MOSTRAR LISTA DE MENU
-        preguntar = parseInt(prompt("¿Que desea comprar?\n" + mostrarLista(menu)));
+    if (opcionElegida === 1) {
+        // SI ES IGUAL A 1, PREGUNTAR QUE DESEA COMPRAR Y MOSTRAR LISTA DE MENU
+        preguntar = parseInt(
+            prompt("¿Que desea comprar?\n" + mostrarLista(menu))
+        );
         gracias(1, 6);
-    } else if (opcionElegida === 2) { // SI ES IGUAL A 1, PREGUNTAR QUE DESEA COMPRAR Y MOSTRAR LISTA DE PROMOS
-        preguntar = parseInt(prompt("¿Que desea comprar?\n" + mostrarLista(promos)));
+    } else if (opcionElegida === 2) {
+        // SI ES IGUAL A 1, PREGUNTAR QUE DESEA COMPRAR Y MOSTRAR LISTA DE PROMOS
+        preguntar = parseInt(
+            prompt("¿Que desea comprar?\n" + mostrarLista(promos))
+        );
         gracias(1, 3);
-    } else if (opcionElegida === 3) { // SI ES 3, MOSTRAR POR CONSOLA QUE NO QUISO COMPRAR Y SALIR
+    } else if (opcionElegida === 3) {
+        // SI ES 3, MOSTRAR POR CONSOLA QUE NO QUISO COMPRAR Y SALIR
         console.log("No quiso comprar");
         verdadero = false;
     } else {
-        console.log("No seleccionaste ninguna opcion")
+        console.log("No seleccionaste ninguna opcion");
     }
 }
 
