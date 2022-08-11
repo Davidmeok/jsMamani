@@ -69,6 +69,12 @@ html {
     flex-direction: row;
     gap: 1rem;
 }
+.cant-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
 .btn {
     text-transform: uppercase;
     font-weight: 600;
