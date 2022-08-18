@@ -1,87 +1,15 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+// IMPORT DE GLOBAL
+@import "global/reset";
 
-html {
-    font-size: 15px;
-}
+// IMPORT DE UTILITIES
+// @import "utilities/variables";
+@import "utilities/mixins";
 
-.body {
-    & {
-        display: grid;
-        grid-template-rows: auto 1fr;
-        min-height: 100vh;
-        background-image: linear-gradient(
-            to top,
-            #090909,
-            #141415,
-            #1d1c1d,
-            #262424,
-            #2f2c2c
-        );
-    }
-}
+// IMPORT DE LAYOUT
+@import "layout/header";
 
-.header {
-    width: 100%;
-}
-.nav {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+// IMPORT DE PAGES
+@import "pages/index";
 
-    &-icon {
-        height: 40px;
-        width: 40px;
-        color: #ededed;
-    }
-}
-.main {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column;
-}
-.tittle {
-    color: #ededed;
-    font-size: 2rem;
-    text-align: center;
-}
-.section {
-    &-art {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    &-tittle {
-        font-size: 1.6rem;
-        text-transform: uppercase;
-        color: #ededed;
-    }
-}
-.con-btn {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-}
-.cant-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-.btn {
-    text-transform: uppercase;
-    font-weight: 600;
-}
-
-@media screen and (max-width: 480px) {
-    .con-btn {
-        flex-direction: column;
-    }
-}
+// IMPORT DE MEDIAQUERY
+// @import "media/mediaquery";
