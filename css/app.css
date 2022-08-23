@@ -267,3 +267,7 @@ svg {
     font-size: clamp(0.7rem, 1.4vw, 2.8rem);
     border-radius: 1rem;
     width: 100%; }
+
+@media screen and (max-width: 480px) {
+  .aside {
+    width: 65vw; } }
