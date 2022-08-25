@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://kit.fontawesome.com/eb7f92c8b2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="shortcut icon" href="./img/logocrismaburger.svg" type="image/x-icon">
     <link rel="stylesheet" href="./css/app.css">
     <title>Crisma Burger | Productos</title>
@@ -81,7 +82,7 @@
 
         <!-- SECCION DE CARRITO LATERAL -->
         <aside class="aside">
-            <main id="aside-main" class="aside-main">
+            <div id="aside-main" class="aside-main">
                 <template id="template-aside">
                     <!-- SECCION DEL PRODUCTO -->
                     <section class="aside-section">
@@ -102,7 +103,7 @@
                         </button>
                     </section>
                 </template>
-            </main>
+            </div>
             <footer id="aside-footer" class="aside-footer">
                 <template id="template-aside-footer">
                     <!-- SECCION TOTAL Y BOTON FINALIZAR COMPRA -->
@@ -115,6 +116,9 @@
             </footer>
         </aside>
     </main>
+    <!-- LIBRERIA TOASTIFY -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!-- SCRIPTS -->
     <script src="./js/productos.js"></script>
     <script src="./js/template.js"></script>
     <script src="./js/funciones.js"></script>

@@ -22,6 +22,11 @@ const agregadoLocal = (clave, valor) => {
     localStorage.setItem(clave, valor);
 };
 
+//* FUNCION CARGAR PRODUCTOS SI EXISTEN
+function cargarProductos() {
+    carrito.length > 0 && mostrarCarrito();
+}
+
 //* FUNCION AGREGAR AL CARRITO
 function agregarCarrito(ev) {
     //? CREACION DE PRODUCTO A AGREGAR AL CARRITO
@@ -64,4 +69,19 @@ function mostrarTotal() {
     clonTotalCarrito.querySelector(".aside-btn").textContent = "Finalizar Compra";
     fragAsideFooter.appendChild(clonTotalCarrito);
     asideFooter.appendChild(fragAsideFooter);
+}
+
+//* FUNCION MOSTRAR NOTIFICACION DE AGREGADO AL CARRITO
+function mostrarNotificacion() {
+    Toastify({
+        text: "AGREGADO",
+        duration: 3000,
+        position: "right",
+        style: {
+            background: "#181818",
+            color: "#e6e6e6",
+            fontSize: "1rem",
+            fontWeight: "600",
+        },
+    }).showToast();
 }
