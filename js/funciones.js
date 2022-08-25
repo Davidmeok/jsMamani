@@ -74,7 +74,7 @@ function mostrarTotal() {
 //* FUNCION MOSTRAR NOTIFICACION DE AGREGADO AL CARRITO
 function mostrarNotificacion() {
     Toastify({
-        text: "AGREGADO",
+        text: "SE AGREGO AL CARRITO",
         duration: 3000,
         position: "right",
         style: {
