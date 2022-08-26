@@ -50,7 +50,7 @@ function mostrarCarrito() {
     carrito.forEach((elemento) => {
         aside.textContent = "";
         const clonAside = tempAside.content.firstElementChild.cloneNode(true);
-        clonAside.querySelector(".aside-img").setAttribute("src", elemento.imagen);
+        clonAside.querySelector(".aside-img").setAttribute("src", `./${elemento.imagen}`);
         clonAside.querySelector(".aside-tittle").textContent = `x${elemento.cantidad} ${elemento.nombre}`;
         clonAside.querySelector(".aside-span").textContent = `$${elemento.precio * elemento.cantidad}`;
         fragAside.appendChild(clonAside);
