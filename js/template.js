@@ -1,10 +1,14 @@
-const main = document.getElementById("main"); // NODO <MAIN ID="MAIN">
-const tempProducto = document.getElementById("template-producto"); // NODO <TEMPLATE ID="TEMPLATE-PRODUCTO">
-const fragProducto = document.createDocumentFragment(); // FRAGMENT
-const carrito = JSON.parse(localStorage.getItem("product-carrito")) || []; // CARRITO DE PRODUCTOS
-const aside = document.getElementById("aside-main"); // NODO <MAIN ID="ASIDE-MAIN">
-const tempAside = document.getElementById("template-aside"); // NODO <TEMPLATE ID="TEMPLATE-ASIDE">
-const fragAside = document.createDocumentFragment(); // FRAGMENT
-const asideFooter = document.getElementById("aside-footer"); // NODO <FOOTER ID="ASIDE-FOOTER">
-const tempAsideFooter = document.getElementById("template-aside-footer"); // NODO <TEMPLATE ID="TEMPLATE-ASIDE-FOOTER">
-const fragAsideFooter = document.createDocumentFragment(); // FRAGMENT
+//* NODO, TEMPLATE Y FRAGMENT A UTILIZAR PARA PRODUCTOS
+const main = document.getElementById("main");
+const tempProducto = document.getElementById("template-producto");
+const fragProducto = document.createDocumentFragment();
+//* CARRITO DE PRODUCTOS
+const carrito = JSON.parse(localStorage.getItem("product-carrito")) || [];
+//* NODO, TEMPLATE Y FRAGMENT A UTILIZAR PARA CARRITO
+const aside = document.getElementById("aside-main");
+const tempAside = document.getElementById("template-aside");
+const fragAside = document.createDocumentFragment();
+//* NODO, TEMPLATE Y FRAGMENT A UTILIZAR PARA TOTAL Y FINALIZAR COMPRA DEL CARRITO
+const asideFooter = document.getElementById("aside-footer");
+const tempAsideFooter = document.getElementById("template-aside-footer");
+const fragAsideFooter = document.createDocumentFragment();

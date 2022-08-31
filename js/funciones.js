@@ -1,22 +1,23 @@
-//* FUNCION CREAR PRODUCTOS CON DOM
-productos.forEach((elemento) => {
-    const clonProducto = tempProducto.content.firstElementChild.cloneNode(true);
-    clonProducto.querySelector(".product-img").setAttribute("src", `./${elemento.imagen}`);
-    clonProducto.querySelector(".product-tittle").textContent = elemento.nombre;
-    clonProducto.querySelector(".product-price").textContent = elemento.precio;
-    clonProducto.querySelector(".btn-agregar").dataset.agregar = elemento.nombre;
-    clonProducto.querySelector(".btn-agregar").dataset.precio = elemento.precio;
-    clonProducto.querySelector(".btn-agregar").dataset.imagen = elemento.imagen;
-    clonProducto.querySelector(".svg-agregar").dataset.agregar = elemento.nombre;
-    clonProducto.querySelector(".svg-agregar").dataset.precio = elemento.precio;
-    clonProducto.querySelector(".svg-agregar").dataset.imagen = elemento.imagen;
-    clonProducto.querySelector(".path-agregar").dataset.agregar = elemento.nombre;
-    clonProducto.querySelector(".path-agregar").dataset.precio = elemento.precio;
-    clonProducto.querySelector(".path-agregar").dataset.imagen = elemento.imagen;
-    fragProducto.appendChild(clonProducto);
-});
-main.appendChild(fragProducto);
-
+//* FUNCION CREAR DOM CON EL CONTENIDO CONSUMIDO DEL JSON
+function productos(contenido) {
+    contenido.forEach((elemento) => {
+        const clonProducto = tempProducto.content.firstElementChild.cloneNode(true);
+        clonProducto.querySelector(".product-img").setAttribute("src", `./${elemento.imagen}`);
+        clonProducto.querySelector(".product-tittle").textContent = elemento.nombre;
+        clonProducto.querySelector(".product-price").textContent = elemento.precio;
+        clonProducto.querySelector(".btn-agregar").dataset.agregar = elemento.nombre;
+        clonProducto.querySelector(".btn-agregar").dataset.precio = elemento.precio;
+        clonProducto.querySelector(".btn-agregar").dataset.imagen = elemento.imagen;
+        clonProducto.querySelector(".svg-agregar").dataset.agregar = elemento.nombre;
+        clonProducto.querySelector(".svg-agregar").dataset.precio = elemento.precio;
+        clonProducto.querySelector(".svg-agregar").dataset.imagen = elemento.imagen;
+        clonProducto.querySelector(".path-agregar").dataset.agregar = elemento.nombre;
+        clonProducto.querySelector(".path-agregar").dataset.precio = elemento.precio;
+        clonProducto.querySelector(".path-agregar").dataset.imagen = elemento.imagen;
+        fragProducto.appendChild(clonProducto);
+    });
+    main.appendChild(fragProducto);
+}
 //* FUNCION GUARDAR INFORMACION AL LOCAL STORAGE
 const agregadoLocal = (clave, valor) => {
     localStorage.setItem(clave, valor);
