@@ -1,7 +1,7 @@
 //* NODO, TEMPLATE Y FRAGMENT A UTILIZAR PARA PRODUCTOS
-const main = document.getElementById("main");
-const tempProducto = document.getElementById("template-producto");
-const fragProducto = document.createDocumentFragment();
+const sectionProduct = document.querySelector(".product-section");
+const tempProduct = document.getElementById("template-product");
+const fragProduct = document.createDocumentFragment();
 //* CARRITO DE PRODUCTOS
 const carrito = JSON.parse(localStorage.getItem("product-carrito")) || [];
 //* NODO, TEMPLATE Y FRAGMENT A UTILIZAR PARA CARRITO

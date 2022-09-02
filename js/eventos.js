@@ -6,8 +6,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 //* EVENTOS CLICK PARA EL SITIO
 document.addEventListener("click", (ev) => {
-    //? EVENTO PARA LOS NODOS BTN, SVG Y PATH
-    if (ev.target.matches(".btn-agregar") || ev.target.matches(".svg-agregar") || ev.target.matches(".path-agregar")) {
+    //? EVENTO PARA LOS NODOS BTN, SVG Y PATH DE AGREGAR AL CARRITO
+    if (
+        ev.target.matches(".btn-agregar") ||
+        ev.target.matches(".btn-agregar svg") ||
+        ev.target.matches(".btn-agregar path")
+    ) {
         agregarCarrito(ev);
         mostrarNotificacion();
     }
