@@ -13,8 +13,8 @@ function productos(contenido) {
             ".product-name"
         ).innerHTML = `${elemento.nombre} <span class="product-price">${elemento.precio}</span>`;
         botonesData(clonProduct, ".product-btn", 1, elemento);
-        botonesData(clonProduct, ".product-icon", 1, elemento);
-        botonesData(clonProduct, ".product-icon path", 1, elemento);
+        botonesData(clonProduct, ".product-btn svg", 1, elemento);
+        botonesData(clonProduct, ".product-btn path", 1, elemento);
         fragProduct.appendChild(clonProduct);
     });
     sectionProduct.appendChild(fragProduct);
@@ -50,27 +50,26 @@ function agregarCarrito(ev) {
 function mostrarCarrito() {
     //? FUNCION CREAR PRODUCTOS CON DOM
     carrito.forEach((elemento) => {
-        aside.textContent = "";
-        const clonAside = tempAside.content.firstElementChild.cloneNode(true);
+        asideProduct.textContent = "";
+        const clonAside = tempAside.content.cloneNode(true);
         clonAside.querySelector(".aside-img").setAttribute("src", `./${elemento.imagen}`);
-        clonAside.querySelector(".aside-tittle").textContent = `x${elemento.cantidad} ${elemento.nombre}`;
-        clonAside.querySelector(".aside-span").textContent = `$${elemento.precio * elemento.cantidad}`;
+        clonAside.querySelector(".aside-name").textContent = `x${elemento.cantidad} ${elemento.nombre}`;
+        clonAside.querySelector(".aside-price").textContent = `$${elemento.precio * elemento.cantidad}`;
         fragAside.appendChild(clonAside);
     });
-    aside.appendChild(fragAside);
+    asideProduct.appendChild(fragAside);
     //? FUNCION A EJECUTAR
     mostrarTotal();
 }
 
 //* FUNCION MOSTRAR TOTAL DEL CARRITO
 function mostrarTotal() {
-    const totalCarrito = carrito.reduce((acumulador, elemento) => acumulador + elemento.precio * elemento.cantidad, 0);
-    asideFooter.textContent = "";
-    const clonTotalCarrito = tempAsideFooter.content.cloneNode(true);
-    clonTotalCarrito.querySelector(".aside-span").textContent = `$${totalCarrito}`;
-    clonTotalCarrito.querySelector(".aside-btn").textContent = "Finalizar Compra";
-    fragAsideFooter.appendChild(clonTotalCarrito);
-    asideFooter.appendChild(fragAsideFooter);
+    const carritoTotal = carrito.reduce((acumulador, elemento) => acumulador + elemento.precio * elemento.cantidad, 0);
+    asideTotal.textContent = "";
+    const clonCarritoTotal = tempAsideTotal.content.cloneNode(true);
+    clonCarritoTotal.querySelector(".aside-price").textContent = `$${carritoTotal}`;
+    fragAsideTotal.appendChild(clonCarritoTotal);
+    asideTotal.appendChild(fragAsideTotal);
 }
 
 //* FUNCION MOSTRAR NOTIFICACION DE AGREGADO AL CARRITO

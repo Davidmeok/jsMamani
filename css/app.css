@@ -111,7 +111,7 @@ td {
 
 svg {
   display: block;
-  width: 100%;
+  width: 3vw;
   fill: currentColor; }
 
 .nav-ul {
@@ -120,9 +120,6 @@ svg {
   justify-content: center;
   align-items: center;
   gap: 1rem; }
-
-.nav-icon {
-  color: var(--icon-primary); }
 
 .main {
   display: flex;
@@ -185,85 +182,61 @@ svg {
   padding: 0.5em 2em;
   border-radius: 1rem; }
 
-.product-icon {
-  width: 3vw; }
-
 .aside {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: var(--background-secondary);
   width: 35vw;
-  height: 100%;
   max-height: 100vh;
-  padding: 1em 1em; }
-  .aside-main {
-    display: grid;
-    justify-items: center;
-    align-items: center;
-    height: 100%;
-    overflow-y: scroll; }
-    .aside-main::-webkit-scrollbar {
-      width: 7px; }
-    .aside-main::-webkit-scrollbar-thumb {
-      background-color: var(--component-primary); }
+  padding: 1rem;
+  background-color: var(--background-secondary); }
   .aside-section {
+    overflow-y: scroll; }
+    .aside-section::-webkit-scrollbar {
+      width: 0.5rem; }
+    .aside-section::-webkit-scrollbar-thumb {
+      background-color: var(--component-secondary);
+      border-radius: 1rem; }
+  .aside-product {
     display: grid;
     justify-items: center;
     align-items: center;
+    gap: 1rem;
+    margin: 0.3rem 0 0.5rem 0;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "img info clear";
-    background-color: var(--background-primary);
-    border-radius: 1rem;
-    width: 100%;
-    padding: 0.5em;
-    margin: 0.2em; }
-  .aside-img {
-    grid-area: img;
-    max-width: 100px; }
+    background-color: var(--background-primary); }
   .aside-art {
-    grid-area: info;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; }
-  .aside-tittle {
+  .aside-name {
     text-align: center;
     text-transform: uppercase;
     font-size: clamp(0.6rem, 1.3vw, 2.6rem);
     font-weight: var(--weight-texto); }
-  .aside-span {
-    text-align: center;
-    text-transform: uppercase;
+  .aside-price {
     font-size: clamp(0.7rem, 1.4vw, 2.8rem);
     font-weight: var(--weight-tittle); }
-  .aside-clear {
-    cursor: pointer;
-    grid-area: clear;
-    background-color: var(--component-primary);
-    padding: 0.5em;
-    border-radius: 1em; }
-  .aside-icon {
+  .aside-delete {
     color: var(--component-secondary); }
-  .aside-footer {
-    width: 100%;
-    height: 100%; }
-  .aside-contain {
+  .aside-total {
+    width: 100%; }
+  .aside-details {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0.5em 1em;
-    width: 100%; }
-  .aside-btn {
-    cursor: pointer;
-    text-transform: uppercase;
-    padding: 0.5em 1em;
-    font-weight: var(--weight-componentes);
+    padding: 0.5rem; }
+  .aside-finish {
     background-color: var(--component-primary);
+    text-transform: uppercase;
     font-size: clamp(0.7rem, 1.4vw, 2.8rem);
+    font-weight: var(--weight-componentes);
     border-radius: 1rem;
-    width: 100%; }
+    width: 100%;
+    padding: 0.5rem 1rem; }
 
 @media screen and (max-width: 480px) {
   .aside {
