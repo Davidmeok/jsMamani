@@ -114,6 +114,12 @@ svg {
   width: 3vw;
   fill: currentColor; }
 
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center; }
+
 .nav-ul {
   display: flex;
   flex-direction: row;
@@ -183,14 +189,21 @@ svg {
   border-radius: 1rem; }
 
 .aside {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: 35vw;
+  transform: translateX(100%);
+  transition: all 1.8s ease;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 35vw;
   max-height: 100vh;
   padding: 1rem;
   background-color: var(--background-secondary); }
+  .aside-active {
+    transform: translateX(0); }
   .aside-section {
     overflow-y: scroll; }
     .aside-section::-webkit-scrollbar {
@@ -219,8 +232,8 @@ svg {
   .aside-price {
     font-size: clamp(0.7rem, 1.4vw, 2.8rem);
     font-weight: var(--weight-tittle); }
-  .aside-delete {
-    color: var(--component-secondary); }
+  .aside-delete svg {
+    fill: var(--component-secondary); }
   .aside-total {
     width: 100%; }
   .aside-details {
@@ -240,4 +253,6 @@ svg {
 
 @media screen and (max-width: 480px) {
   .aside {
-    width: 65vw; } }
+    width: 65vw; }
+  svg {
+    width: 7vw; } }

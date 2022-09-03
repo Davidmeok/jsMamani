@@ -15,4 +15,8 @@ document.addEventListener("click", (ev) => {
     if (ev.target.matches(".aside-delete svg, .aside-delete path")) {
         eliminarProducto(ev);
     }
+
+    if (ev.target.matches(".aside-btn path")) {
+        mostrarAside();
+    }
 });

@@ -96,3 +96,8 @@ function eliminarProducto(ev) {
     carrito.length == 0 && (asideTotal.textContent = "") & (asideProduct.textContent = "");
     cargarProductos();
 }
+
+function mostrarAside() {
+    const aside = document.querySelector(".aside");
+    aside.classList.toggle("aside-active");
+}
