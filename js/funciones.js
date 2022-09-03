@@ -42,8 +42,8 @@ function agregarCarrito(ev) {
     const indexof = carrito.findIndex((elemento) => producto.nombre === elemento.nombre);
     indexof === -1 ? carrito.push(producto) : carrito[indexof].cantidad++;
     //? FUNCIONES A EJECUTAR
-    agregadoLocal("product-carrito", JSON.stringify(carrito));
     mostrarCarrito();
+    agregadoLocal("product-carrito", JSON.stringify(carrito));
 }
 
 //* FUNCION MOSTRAR CARRITO CON DOM
@@ -55,6 +55,8 @@ function mostrarCarrito() {
         clonAside.querySelector(".aside-img").setAttribute("src", `./${elemento.imagen}`);
         clonAside.querySelector(".aside-name").textContent = `x${elemento.cantidad} ${elemento.nombre}`;
         clonAside.querySelector(".aside-price").textContent = `$${elemento.precio * elemento.cantidad}`;
+        clonAside.querySelector(".aside-delete svg").dataset.producto = elemento.nombre;
+        clonAside.querySelector(".aside-delete path").dataset.producto = elemento.nombre;
         fragAside.appendChild(clonAside);
     });
     asideProduct.appendChild(fragAside);
@@ -64,8 +66,8 @@ function mostrarCarrito() {
 
 //* FUNCION MOSTRAR TOTAL DEL CARRITO
 function mostrarTotal() {
-    const carritoTotal = carrito.reduce((acumulador, elemento) => acumulador + elemento.precio * elemento.cantidad, 0);
     asideTotal.textContent = "";
+    const carritoTotal = carrito.reduce((acumulador, elemento) => acumulador + elemento.precio * elemento.cantidad, 0);
     const clonCarritoTotal = tempAsideTotal.content.cloneNode(true);
     clonCarritoTotal.querySelector(".aside-price").textContent = `$${carritoTotal}`;
     fragAsideTotal.appendChild(clonCarritoTotal);
@@ -85,4 +87,12 @@ function mostrarNotificacion() {
             fontWeight: "600",
         },
     }).showToast();
+}
+
+//* FUNCION ELIMINAR PRODUCTO DEL CARRITO
+function eliminarProducto(ev) {
+    carrito = carrito.filter((elemento) => elemento.nombre != ev.target.dataset.producto && carrito);
+    agregadoLocal("product-carrito", JSON.stringify(carrito));
+    carrito.length == 0 && (asideTotal.textContent = "") & (asideProduct.textContent = "");
+    cargarProductos();
 }
